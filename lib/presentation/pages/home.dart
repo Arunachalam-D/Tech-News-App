@@ -6,6 +6,7 @@ import '../../bloc/news_bloc.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../core/image_url.dart';
+import '../widgets/search_bar.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -35,6 +36,7 @@ class _HomePageState extends State<HomePage> {
                 ),
                 body: Column(
                     children: [
+                      const Searchbar(),
                       Expanded(
                         child: SizedBox(
                           width: width,

@@ -7,6 +7,8 @@ class NewsInitial extends NewsState {}
 
 class NewsOnLoadState extends NewsState{}
 
+class OpenModalSheetState extends NewsState{}
+
 class FetchNewsSuccessState extends NewsState{
   FetchNewsSuccessState(List newsList);
 }
