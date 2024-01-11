@@ -11,6 +11,7 @@ part 'news_state.dart';
 class NewsBloc extends Bloc<NewsEvent, NewsState> {
   NewsBloc() : super(NewsInitial()) {
     on<FetchNewsEvent>(fetchNewsEvent);
+    on<OpenModalSheetEvent>(openModalSheetEvent);
   }
 
   FutureOr<void> fetchNewsEvent(FetchNewsEvent event, Emitter<NewsState> emit) async{
@@ -23,5 +24,10 @@ class NewsBloc extends Bloc<NewsEvent, NewsState> {
      print(error);
      emit(FetchNewsErrorState());
    }
+  }
+
+  FutureOr<void> openModalSheetEvent(OpenModalSheetEvent event, Emitter<NewsState> emit) {
+    print("bottom sheet state emitted");
+    emit(OpenModalSheetState());
   }
 }
